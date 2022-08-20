@@ -18,7 +18,7 @@ public extension UIColor {
     static var defaultIconColor: UIColor { .pattern(light: .black, dark: .white) }
     
     /// Title color pattern. light: .black and dark: .white
-    static var defaultTitleColor: UIColor { .pattern(light: .black, dark: .white) }
+    static var defaultTitleColor: UIColor { .pattern(light: .darkText, dark: .lightText) }
     
     /// Shadow color pattern. light: .black and dark: .white
     static var defaultShadowColor: UIColor { .black }
