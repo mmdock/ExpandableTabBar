@@ -42,7 +42,6 @@
 		3E8425C824940B8B000C1828 /* NoneAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E8425C724940B8B000C1828 /* NoneAnimation.swift */; };
 		3E8425CD249414C5000C1828 /* Constraints+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E8425CC249414C5000C1828 /* Constraints+Extensions.swift */; };
 		3E8425D124941A82000C1828 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E8425D024941A82000C1828 /* UIView+Extensions.swift */; };
-		3EDB6E8D245CCE420032BC9D /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EDB6E8C245CCE420032BC9D /* Package.swift */; };
 		3EF5188C245CC8CE00F60C21 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF5188B245CC8CE00F60C21 /* AppDelegate.swift */; };
 		C10A528B2057DF1A004A731B /* ExpandedTabBarViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10A528A2057DF1A004A731B /* ExpandedTabBarViews.swift */; };
 		C13C0EF82052A5D5002E9350 /* ExpandedTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13C0EF72052A5D5002E9350 /* ExpandedTabBarController.swift */; };
@@ -94,7 +93,6 @@
 		3E8425C724940B8B000C1828 /* NoneAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoneAnimation.swift; sourceTree = "<group>"; };
 		3E8425CC249414C5000C1828 /* Constraints+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Constraints+Extensions.swift"; sourceTree = "<group>"; };
 		3E8425D024941A82000C1828 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
-		3EDB6E8C245CCE420032BC9D /* Package.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		3EF5188B245CC8CE00F60C21 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		48F0F5CCE014FE0ADB4D884B /* Pods-ExpandedTabBar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExpandedTabBar.debug.xcconfig"; path = "Target Support Files/Pods-ExpandedTabBar/Pods-ExpandedTabBar.debug.xcconfig"; sourceTree = "<group>"; };
 		5B4EFE206609AB474763FF42 /* Pods_ExpandedTabBar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ExpandedTabBar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -232,7 +230,6 @@
 				48F0F5CCE014FE0ADB4D884B /* Pods-ExpandedTabBar.debug.xcconfig */,
 				A94904BE36EA514A5FFF8FFC /* Pods-ExpandedTabBar.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -241,7 +238,6 @@
 			children = (
 				3E82745F249658020049DE81 /* Resources */,
 				C1BE85E82059221300B4411F /* .swift-version */,
-				3EDB6E8C245CCE420032BC9D /* Package.swift */,
 				C1BE85D42058FB8D00B4411F /* LICENSE */,
 				C1BE85D62058FB8D00B4411F /* README.md */,
 				C1BE85D32058FB8D00B4411F /* ExpandedTabBar.podspec */,
@@ -413,7 +409,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3EDB6E8D245CCE420032BC9D /* Package.swift in Sources */,
 				3EF5188C245CC8CE00F60C21 /* AppDelegate.swift in Sources */,
 				3E5FF4D0249346EE00678166 /* AnimationType.swift in Sources */,
 				3E5FF4CD249344AD00678166 /* AnimationProtocol.swift in Sources */,
