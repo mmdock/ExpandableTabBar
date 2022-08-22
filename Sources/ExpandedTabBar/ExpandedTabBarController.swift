@@ -119,9 +119,13 @@ open class ExpandedTabBarController: UITabBarController {
     /// Seyup ExpandedTabBar Orogrammatically.
     /// - Parameter array: Array of UIVIewControllers.
     public func setup(viewControllers array: [UIViewController]) {
-        guard array.count > 5 else { return }
-        let itemsForShow = Array(array[0..<4])
-        moreViewControllers = Array(array[4..<array.count])
+        var maxNumberOfItem = 5
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            maxNumberOfItem = 8
+        }
+        guard array.count > maxNumberOfItem else { return }
+        let itemsForShow = Array(array[0..<maxNumberOfItem - 1])
+        moreViewControllers = Array(array[maxNumberOfItem - 1..<array.count])
             .enumerated().map {
                 $1.restorationIdentifier = "\(kMoreTabVCAtIndex)\($0)"
                 return $1
