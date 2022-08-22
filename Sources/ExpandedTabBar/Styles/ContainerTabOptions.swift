@@ -23,6 +23,12 @@ public protocol ContainerTabOptions {
     /// Icon color.
     var iconColor: UIColor { get set }
     
+    /// Selected title color.
+    var selectedTitleColor: UIColor { get set }
+    
+    /// Selected icon color.
+    var selectedIconColor: UIColor { get set }
+    
     /// Icon content mode.
     var iconContentMode: UIView.ContentMode { get set }
     
@@ -45,6 +51,12 @@ public struct ContainerTabDefaultOptions: ContainerTabOptions {
     
     /// Icon color.
     public var iconColor: UIColor = .defaultIconColor
+    
+    /// Selected title color.
+    public var selectedTitleColor: UIColor = .defaultTitleColor
+    
+    /// Selected icon color.
+    public var selectedIconColor: UIColor = .defaultIconColor
     
     /// Icon content mode.
     public var iconContentMode: UIView.ContentMode = .scaleAspectFit

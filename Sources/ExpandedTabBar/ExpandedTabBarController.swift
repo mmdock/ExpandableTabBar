@@ -132,10 +132,16 @@ open class ExpandedTabBarController: UITabBarController {
     }
 }
 
-// MARK: - Animartion Handling
+// MARK: - Animation Handling
 internal extension ExpandedTabBarController {
     func showMoreContainer() {
         guard let parent = self.parentContainerView else { return }
+        
+        if selectedIndex == 4, let vc = self.selectedViewController, let index = self.moreViewControllers?.firstIndex(of: vc) {
+            parent.setSelected(for: index)
+        } else {
+            parent.setSelected(for: -1)
+        }
         
         self.options.animationType.animation.willShow(container: parent, background: self.backgroundView)
         

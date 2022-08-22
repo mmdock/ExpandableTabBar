@@ -9,6 +9,28 @@
 
 import UIKit
 
+class SelectableStackView: UIStackView {
+    func setSelection(selected: Bool, with options: ContainerTabOptions) {
+        let label: UILabel? = self.arrangedSubviews.first(where: {
+            view in
+            return view is UILabel
+        }) as? UILabel
+        
+        let imView: UIImageView? = self.arrangedSubviews.first(where: {
+            view in
+            return view is UIImageView
+        }) as? UIImageView
+        
+        if selected {
+            label?.textColor = options.selectedTitleColor
+            imView?.tintColor = options.selectedIconColor
+        } else {
+            label?.textColor = options.titleColor
+            imView?.tintColor = options.iconColor
+        }
+    }
+}
+
 internal final class ExpandedTabBarViews {
 
     static func moreItemView(for item: UITabBarItem,
@@ -16,8 +38,8 @@ internal final class ExpandedTabBarViews {
                             target: Any?,
                             action: Selector?,
                             options: Options) -> UIStackView {
-
-        let parentView = UIStackView()
+        
+        let parentView = SelectableStackView()
         parentView.tag = index
         parentView.spacing = options.container.tab.iconTitleSpace
         parentView.distribution = .fill

@@ -45,6 +45,14 @@ public final class ContainerView: UIView {
 
 }
 
+internal extension ContainerView {
+    func setSelected(for index: Int) {
+        for view in stackView.arrangedSubviews {
+            (view as? SelectableStackView)?.setSelection(selected: view.tag == index, with: self.options.tab)
+        }
+    }
+}
+
 // MARK: - Static methods
 internal extension ContainerView {
     class func create(for tabBar: UITabBar) -> ContainerView {
