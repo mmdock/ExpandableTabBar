@@ -19,6 +19,10 @@ let kMoreStackAtIndex = "_UIExpandedTabBarMoreStackAt"
         _ tabBarController: UITabBarController,
         didSelect viewController: UIViewController,
         withItem tabBarItem: UITabBarItem?)
+    
+    @objc optional func expandedTabBarController(
+        _ tabBarController: UITabBarController,
+        configure moreTabItem: UITabBarItem)
 }
 
 open class ExpandedTabBarController: UITabBarController {
@@ -107,6 +111,7 @@ open class ExpandedTabBarController: UITabBarController {
         let icon = moreIcon ?? (item.image ?? item.selectedImage)?.withRenderingMode(.alwaysTemplate)
         
         vc.tabBarItem = UITabBarItem(title: moreTitle, image: icon, selectedImage: moreSelectedIcon)
+        self.expandedDelegate?.expandedTabBarController?(self, configure: vc.tabBarItem)
         return vc
     }
 
@@ -131,7 +136,8 @@ open class ExpandedTabBarController: UITabBarController {
                 return $1
         }
         self.viewControllers = itemsForShow
-        self.viewControllers?.append(moreViewController())
+        let vc = moreViewController()
+        self.viewControllers?.append(vc)
         addMoreView()
     }
 }
