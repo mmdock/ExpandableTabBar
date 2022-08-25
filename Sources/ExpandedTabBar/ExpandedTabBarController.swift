@@ -108,7 +108,7 @@ open class ExpandedTabBarController: UITabBarController {
         vc.restorationIdentifier = kMoreTabVCIdentifier
         
         let item = UITabBarItem(tabBarSystemItem: .more, tag: 0)
-        let icon = moreIcon ?? (item.image ?? item.selectedImage)?.withRenderingMode(.alwaysTemplate)
+        let icon = moreIcon ?? (item.image ?? item.selectedImage)
         
         vc.tabBarItem = UITabBarItem(title: moreTitle, image: icon, selectedImage: moreSelectedIcon)
         self.expandedDelegate?.expandedTabBarController?(self, configure: vc.tabBarItem)

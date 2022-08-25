@@ -20,13 +20,13 @@ public protocol ContainerTabOptions {
     /// Title color.
     var titleColor: UIColor { get set }
     
-    /// Icon color.
+    /// Icon color. Icon must be a template.
     var iconColor: UIColor { get set }
     
     /// Selected title color.
     var selectedTitleColor: UIColor { get set }
     
-    /// Selected icon color.
+    /// Selected icon color.  Selected icon must be a template
     var selectedIconColor: UIColor { get set }
     
     /// Icon content mode.

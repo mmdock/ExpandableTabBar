@@ -24,14 +24,14 @@ class SelectableStackView: UIStackView {
         
         if selected {
             if let image = tabBarItem?.selectedImage {
-                imView?.image = image.withRenderingMode(.alwaysTemplate)
+                imView?.image = image
             } else {
-                imView?.image = tabBarItem?.image?.withRenderingMode(.alwaysTemplate)
+                imView?.image = tabBarItem?.image
             }
             label?.textColor = options.selectedTitleColor
             imView?.tintColor = options.selectedIconColor
         } else {
-            imView?.image = tabBarItem?.image?.withRenderingMode(.alwaysTemplate)
+            imView?.image = tabBarItem?.image
             label?.textColor = options.titleColor
             imView?.tintColor = options.iconColor
         }
@@ -71,7 +71,7 @@ internal final class ExpandedTabBarViews {
 
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
-        imageView.image = item.image?.withRenderingMode(.alwaysTemplate)
+        imageView.image = item.image
         imageView.tintColor = options.container.tab.iconColor
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.addConstraint(imageView.connect(to: imageView, on: .height, to: .width, multiplier: 1))

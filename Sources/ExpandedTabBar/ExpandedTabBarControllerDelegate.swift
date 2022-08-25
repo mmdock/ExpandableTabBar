@@ -21,7 +21,7 @@ extension ExpandedTabBarController: UITabBarControllerDelegate {
         
         return !viewController.isInitialMore && !viewController.isSelectedMore
     }
-
+    
     public func tabBarController(_ tabBarController: UITabBarController,
                                  didSelect viewController: UIViewController) {
         deselectMore()
