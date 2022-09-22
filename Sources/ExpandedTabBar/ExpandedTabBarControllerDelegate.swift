@@ -31,6 +31,26 @@ extension ExpandedTabBarController: UITabBarControllerDelegate {
     }
 }
 
+public extension ExpandedTabBarController {
+    func indexTapped(_ index: Int) {
+        guard let selectedViewController = moreViewControllers?[safe: index] else { return }
+        
+        hideMoreContainer()
+
+        guard let index = viewControllers.initialMoreIndex ?? viewControllers.selectedMoreIndex else { return }
+        
+        let tabBarItem = selectedViewController.tabBarItem
+        selectedViewController.tabBarItem = moreViewController().tabBarItem
+        
+        viewControllers?[index] = selectedViewController
+        self.selectedIndex = index
+        
+        expandedDelegate?.expandedTabBarController(self,
+                                                   didSelect: selectedViewController,
+                                                   withItem: tabBarItem)
+    }
+}
+
 internal extension ExpandedTabBarController {
 
     @objc func itemTapped(_ sender: UITapGestureRecognizer) {
@@ -86,3 +106,10 @@ private extension Optional where Wrapped == [UIViewController] {
     }
 }
 #endif
+
+
+extension Array {
+    public subscript (safe index: Int) -> Element? {
+        return self.indices ~= index ? self[index] : nil
+    }
+}

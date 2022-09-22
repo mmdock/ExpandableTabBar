@@ -113,7 +113,7 @@ open class ExpandedTabBarController: UITabBarController {
         indicatorRightConstraint?.constant = -1 * indicatorRightMargin
     }
 
-    internal func moreViewController() -> UIViewController {
+    public func moreViewController() -> UIViewController {
         let vc = UIViewController()
         vc.restorationIdentifier = kMoreTabVCIdentifier
         
