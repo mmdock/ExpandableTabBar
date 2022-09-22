@@ -36,10 +36,6 @@ class SelectableStackView: UIStackView {
             imView?.tintColor = options.iconColor
         }
     }
-    
-    private func setSelectedImage(){
-        
-    }
 }
 
 internal final class ExpandedTabBarViews {

@@ -28,7 +28,7 @@ let kMoreStackAtIndex = "_UIExpandedTabBarMoreStackAt"
 open class ExpandedTabBarController: UITabBarController {
 
     // MARK: - ViewControllers
-    private(set) var moreViewControllers: [UIViewController]?
+    public internal(set) var moreViewControllers: [UIViewController]?
 
     // MARK: - Public Variables
     public weak var expandedDelegate: ExpandedTabBarControllerDelegate?
@@ -64,6 +64,16 @@ open class ExpandedTabBarController: UITabBarController {
 
     // MARK: - Gestures
     internal var closeTapGesture: UITapGestureRecognizer!
+    
+    var maxNumberOfItem: Int {
+        get {
+            var max = 5
+            if UIDevice.current.userInterfaceIdiom == .pad {
+                max = 8
+            }
+            return max
+        }
+    }
 
 
     // MARK: - Cycle
@@ -124,10 +134,7 @@ open class ExpandedTabBarController: UITabBarController {
     /// Seyup ExpandedTabBar Orogrammatically.
     /// - Parameter array: Array of UIVIewControllers.
     public func setup(viewControllers array: [UIViewController]) {
-        var maxNumberOfItem = 5
-        if UIDevice.current.userInterfaceIdiom == .pad {
-            maxNumberOfItem = 8
-        }
+
         guard array.count > maxNumberOfItem else { return }
         let itemsForShow = Array(array[0..<maxNumberOfItem - 1])
         moreViewControllers = Array(array[maxNumberOfItem - 1..<array.count])
